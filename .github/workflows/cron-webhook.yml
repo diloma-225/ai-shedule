@@ -1,7 +1,9 @@
 name: Trigger Coze Workflow
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:    # permet de déclencher manuellement le workflow
+  # schedule:
+  #   - cron: "0 8 * * *"  # optionnel : pour exécuter automatiquement tous les jours à 08h UTC
 
 jobs:
   run-coze:
@@ -9,12 +11,7 @@ jobs:
     steps:
       - name: Trigger Coze via curl
         run: |
-          curl -X POST 'https://api.coze.com/v1/workflow/run' \
+          curl -X POST "https://api.coze.com/v1/workflow/run" \
             -H "Authorization: Bearer cztei_0OC16uQfIRNM7iPQc46uyK1D8MCf1mQ9Gr89sboLqJBR90vzjVyPe1QiXnM4VfKDf" \
             -H "Content-Type: application/json" \
-            -d '{
-              "workflow_id": "7577402422401449989",
-              "parameters": {
-                "input": "envoie un mail à mon directeur pour l\'informer que le chatbot est terminé"
-              }
-            }'
+            -d "{\"workflow_id\": \"7577402422401449989\", \"parameters\": {\"input\": \"envoie un mail a mon directeur pour l'informer que le chatbot est terminé\"}}"
