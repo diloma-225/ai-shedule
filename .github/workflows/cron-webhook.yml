@@ -1,13 +1,17 @@
-name: Cron webhook
+name: Test webhook manual
 
 on:
-  schedule:
-    - cron: "0 8 * * *"
   workflow_dispatch:
 
 jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          curl -X POST https://webhook.site/TON-ID
+      - name: Call webhook.site
+        run: |
+          curl -X POST https://webhook.site/06106edf-17b7-48a8-a369-ac4451d0bdb9 \
+            -H "Content-Type: application/json" \
+            -d '{
+              "source": "manual-test",
+              "trigger": "workflow_dispatch"
+            }'
