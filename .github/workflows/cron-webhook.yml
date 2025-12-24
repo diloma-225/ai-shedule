@@ -1,17 +1,20 @@
-name: Test webhook manual
+name: Trigger Coze Workflow
 
 on:
   workflow_dispatch:
 
 jobs:
-  trigger:
+  run-coze:
     runs-on: ubuntu-latest
     steps:
-      - name: Call webhook.site
+      - name: Trigger Coze via curl
         run: |
-          curl -X POST https://webhook.site/06106edf-17b7-48a8-a369-ac4451d0bdb9 \
+          curl -X POST 'https://api.coze.com/v1/workflow/run' \
+            -H "Authorization: Bearer cztei_0OC16uQfIRNM7iPQc46uyK1D8MCf1mQ9Gr89sboLqJBR90vzjVyPe1QiXnM4VfKDf" \
             -H "Content-Type: application/json" \
             -d '{
-              "source": "manual-test",
-              "trigger": "workflow_dispatch"
+              "workflow_id": "7577402422401449989",
+              "parameters": {
+                "input": "envoie un mail à mon directeur pour l\'informer que le chatbot est terminé"
+              }
             }'
