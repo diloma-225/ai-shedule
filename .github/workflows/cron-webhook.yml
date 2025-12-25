@@ -14,4 +14,4 @@ jobs:
           curl -X POST "https://api.coze.com/v1/workflow/run" \
             -H "Authorization: Bearer cztei_0OC16uQfIRNM7iPQc46uyK1D8MCf1mQ9Gr89sboLqJBR90vzjVyPe1QiXnM4VfKDf" \
             -H "Content-Type: application/json" \
-            -d "{\"workflow_id\": \"7577402422401449989\", \"parameters\": {\"input\": \"envoie un mail a mon directeur pour l'informer que le chatbot est terminé\"}}"
+            -d "{\"workflow_id\": \"7587434991573336069\", \"parameters\": {\"input\": \"Abidjan\"}}"
