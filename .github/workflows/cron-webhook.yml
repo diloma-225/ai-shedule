@@ -1,9 +1,9 @@
 name: Trigger Coze Workflow
 
 on:
-  workflow_dispatch:    # permet de déclencher manuellement le workflow
-  # schedule:
-  #   - cron: "0 8 * * *"  # optionnel : pour exécuter automatiquement tous les jours à 08h UTC
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * *"
 
 jobs:
   run-coze:
