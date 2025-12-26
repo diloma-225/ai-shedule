@@ -12,6 +12,6 @@ jobs:
       - name: Trigger Coze via curl
         run: |
           curl -X POST "https://api.coze.com/v1/workflow/run" \
-            -H "Authorization: Bearer cztei_0q2E61av0GyBcPP6uDof3M5dCpvl2y6LHvrXRe5GQXDNsVbwxKcX5cHx0Aw2h0Y4t" \
+            -H "Authorization: Bearer pat_rDYKlEuRVwkPuC3ATqfcOIuX1QJY6OjP5f8NVio60pdZvIDebsQXzkuRCm769S4b" \
             -H "Content-Type: application/json" \
             -d "{\"workflow_id\": \"7587434991573336069\", \"parameters\": {\"input\": \"Abidjan\"}}"
