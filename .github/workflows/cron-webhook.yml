@@ -3,7 +3,7 @@ name: Trigger Coze Workflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "4 8 * * *"
 
 jobs:
   run-coze:
